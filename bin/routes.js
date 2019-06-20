@@ -30,11 +30,16 @@ app.get("/usuarios/:id_tema",(req,res)=>{
     res.send("hola mundo!");
 })
 
-
-app.get("/usuarios/:id_tema",(req,res)=>{
-    var id_tema = req.params.id_tema;
-    console.log(id_tema);
+/*ACTIVIDADES REALIZADAS POR LOS USUARIOS*/
+app.get("/usuarios/tema/actividades/:id_actividades",(req,res)=>{
+    var id_actividades = req.params.id_actividades;
+    console.log(id_actividades);
     res.send("hola mundo!");
 })
-
+/*EVALUACION REALIZADA EN CADA ACTIVIDAD*/
+app.get("/actividades/:id_evaluacion",(req,res)=>{
+    var id_evaluacion = req.params.id_evaluacion;
+    console.log(id_evaluacion);
+    res.send("hola mundo!");
+})
 exports.app = app;
