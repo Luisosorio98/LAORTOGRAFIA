@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("./models/User");
+const Tema = require("./models/Tema");
 
 class controller {
     constructor() {
@@ -28,6 +29,20 @@ class controller {
         User.create(user, (err, newUser) => {
             if (err) throw err;
             res.send({ nU: newUser })
+        })
+    }
+
+    getTemas(res) {
+        Tema.find({}, (err, temas) => {
+            if (err) throw err;
+            res.send(temas);
+        })
+    }
+    postTemas(req, res) {
+        let tema = req.boddy.temas;
+        Tema.create(tema, (err, newTema) => {
+            if (err) throw err;
+            res.send({ nT: newTema })
         })
     }
 
